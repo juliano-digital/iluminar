@@ -92,10 +92,10 @@ export default function FinalCTA() {
 
             <button
               type="submit"
-              className={`w-full py-4 rounded-full font-bold text-base transition-all duration-300 flex items-center justify-center gap-2 ${
+              className={`cursor-hover w-full py-4 rounded-full font-bold text-base transition-all duration-500 ease-[var(--ease-out-expo)] flex items-center justify-center gap-2 ${
                 submitted
                   ? 'bg-green-500 text-white'
-                  : 'bg-[var(--color-primary)] text-[var(--color-bg-base)] hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(184,255,0,0.4)]'
+                  : 'bg-[var(--color-primary)] text-[var(--color-bg-base)] hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(184,255,0,0.4)] active:scale-[0.98]'
               }`}
             >
               {submitted ? (

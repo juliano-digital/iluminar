@@ -69,7 +69,7 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="group p-6 rounded-2xl bg-[var(--color-bg-elevated)] border border-[var(--color-border)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-secondary)]/30 hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]"
+              className="cursor-hover group p-6 rounded-2xl bg-[var(--color-bg-elevated)] border border-[var(--color-border)] transition-all duration-500 ease-[var(--ease-out-expo)] hover:-translate-y-2 hover:scale-[1.02] hover:border-[var(--color-secondary)]/30 hover:shadow-[0_8px_32px_rgba(0,0,0,0.6),0_0_20px_rgba(123,47,190,0.1)]"
             >
               {/* Stars */}
               <div className="flex gap-1 mb-4">

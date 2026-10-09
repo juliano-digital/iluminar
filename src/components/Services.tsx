@@ -66,11 +66,11 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className={`group relative p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1 ${
+              className={`cursor-hover group relative p-6 rounded-2xl border transition-all duration-500 ease-[var(--ease-out-expo)] hover:-translate-y-2 hover:scale-[1.02] ${
                 service.popular
-                  ? 'bg-gradient-to-br from-[var(--color-bg-elevated)] to-[var(--color-bg-surface)] border-[var(--color-primary)]/40 shadow-[0_0_24px_rgba(184,255,0,0.1)]'
+                  ? 'bg-gradient-to-br from-[var(--color-bg-elevated)] to-[var(--color-bg-surface)] border-[var(--color-primary)]/40 shadow-[0_0_24px_rgba(184,255,0,0.1)] hover:shadow-[0_0_40px_rgba(184,255,0,0.2)]'
                   : 'bg-[var(--color-bg-elevated)] border-[var(--color-border)] hover:border-[var(--color-primary)]/30'
-              } hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]`}
+              } hover:shadow-[0_8px_32px_rgba(0,0,0,0.6),0_0_20px_rgba(184,255,0,0.06)]`}
             >
               {/* Popular badge */}
               {service.popular && (

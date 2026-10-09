@@ -67,7 +67,7 @@ export default function Benefits() {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="group relative p-6 md:p-8 rounded-2xl bg-[var(--color-bg-elevated)] border border-[var(--color-border)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-primary)]/30 hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]"
+              className="cursor-hover group relative p-6 md:p-8 rounded-2xl bg-[var(--color-bg-elevated)] border border-[var(--color-border)] transition-all duration-500 ease-[var(--ease-out-expo)] hover:-translate-y-2 hover:scale-[1.02] hover:border-[var(--color-primary)]/30 hover:shadow-[0_8px_32px_rgba(0,0,0,0.6),0_0_24px_rgba(184,255,0,0.08)]"
             >
               {/* Icon */}
               <div className="w-12 h-12 rounded-xl bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary)] mb-4 transition-all duration-300 group-hover:bg-[var(--color-primary)]/20 group-hover:shadow-[0_0_20px_rgba(184,255,0,0.15)]">
