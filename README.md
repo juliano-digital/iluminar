@@ -1,39 +1,54 @@
-# BarberKings - Landing Page + Painel Admin
+# BarberKings - Landing Page Moderna + Painel Admin
 
-Landing page completa para barbearia com painel administrativo integrado, desenvolvido com React + Vite + Tailwind CSS + Supabase.
+Landing page minimalista com vídeo de fundo e painel administrativo completo, desenvolvido com React + Vite + Tailwind CSS + Supabase.
 
-## 🎨 Design System
+## 🎨 Design da Landing Page
 
-O projeto segue rigorosamente o Design System especificado:
-- **Cores**: Dark mode com acentos neon (Lime #B8FF00, Purple #7B2FBE, Cyan #00E5FF)
-- **Tipografia**: Space Grotesk (títulos) + Inter (corpo)
-- **Espaçamento**: Base 8px com múltiplos consistentes
-- **Animações**: Transições suaves com cubic-bezier(0.16, 1, 0.3, 1)
-- **Esfera 3D**: Three.js com shaders de deformação orgânica
+### Vídeo de Fundo
+- **URL**: `https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_204221_5339e40b-e73d-4ab0-9c65-79c18c66fd50.mp4`
+- Atributos: autoPlay, muted, loop, playsInline
+- Posicionamento: object-position 70% center
+
+### Tipografia
+- **Fonte**: Geist (Google Fonts)
+- Pesos: 300-700
+- Aplicada como `font-geist` no container raiz
+
+### Layout
+- **Navbar (z-30)**: Logo "Foldcraft" + links de navegação + botão "Let's Talk"
+- **Menu Mobile**: Overlay fullscreen com animação suave (cubic-bezier)
+- **Hero Section (z-10)**: 
+  - Badge: "Brand & Visual Storytelling"
+  - Heading: "Shaping visual narratives, one pixel at a time."
+  - Parágrafo descritivo
+  - CTA: "Explore Work" com ícone ArrowRight
+
+### Animações
+- **fadeSlideUp**: Entrada suave com translate Y (24px → 0) e fade
+- Delays escalonados: 0.2s, 0.4s, 0.7s, 0.9s
+- Transições de hover com scale(1.05)
+- Menu mobile com rotação de ícones (Menu ↔ X)
 
 ## 🚀 Funcionalidades
 
 ### Landing Page
-- Hero com CTA acima da dobra
-- Seção de benefícios com cards animados
-- Lista de serviços com preços
-- Depoimentos de clientes
-- FAQ interativo
-- Formulário de captura de leads
-- Esfera 3D interativa com arraste e parallax
-- Cursor customizado (desktop)
-- Animações de scroll premium com GSAP
+- ✅ Vídeo de fundo em loop
+- ✅ Design responsivo (mobile-first)
+- ✅ Menu mobile animado
+- ✅ Animações de entrada escalonadas
+- ✅ Tipografia Geist moderna
+- ✅ Botões com hover effects
 
 ### Painel Admin
-- Dashboard com estatísticas em tempo real
-- CRUD completo de agendamentos
-- Validação de formulário
-- Máscara de telefone automática
-- Busca e filtros
-- Tabela responsiva (desktop) e cards (mobile)
-- Modal de edição
-- Toast notifications
-- Sidebar colapsável
+- ✅ Dashboard com estatísticas em tempo real
+- ✅ CRUD completo de agendamentos
+- ✅ Validação de formulário
+- ✅ Máscara de telefone automática
+- ✅ Busca e filtros
+- ✅ Tabela responsiva (desktop) e cards (mobile)
+- ✅ Modal de edição
+- ✅ Toast notifications
+- ✅ Sidebar colapsável
 
 ## 📦 Instalação
 
@@ -51,7 +66,7 @@ npm install
 
 ### 2. Criar Tabela de Agendamentos
 
-No SQL Editor do Supabase, execute:
+No SQL Editor do Supabase, execute o script em `supabase-schema.sql` ou:
 
 ```sql
 CREATE TABLE appointments (
@@ -63,10 +78,7 @@ CREATE TABLE appointments (
   created_at TIMESTAMP DEFAULT NOW()
 );
 
--- Criar índice para busca por data
 CREATE INDEX idx_appointments_scheduled_at ON appointments(scheduled_at);
-
--- Criar índice para busca por nome
 CREATE INDEX idx_appointments_name ON appointments(name);
 ```
 
@@ -96,7 +108,7 @@ Acesse:
 ```
 src/
 ├── components/
-│   ├── admin/           # Componentes do painel admin
+│   ├── admin/              # Componentes do painel admin
 │   │   ├── AdminPanel.tsx
 │   │   ├── AppointmentForm.tsx
 │   │   ├── AppointmentsList.tsx
@@ -108,7 +120,8 @@ src/
 │   │   ├── Modal.tsx
 │   │   ├── Select.tsx
 │   │   └── Sidebar.tsx
-│   ├── Benefits.tsx
+│   ├── FoldcraftLanding.tsx  # Nova landing page com vídeo
+│   ├── Benefits.tsx          # Landing page antiga (backup)
 │   ├── FAQ.tsx
 │   ├── FinalCTA.tsx
 │   ├── Footer.tsx
@@ -128,47 +141,68 @@ src/
 
 ## 🎯 Tecnologias
 
+### Landing Page
 - **React 18** - UI framework
 - **Vite** - Build tool
 - **TypeScript** - Type safety
 - **Tailwind CSS** - Styling
-- **GSAP** - Animações premium
-- **Three.js** - Esfera 3D com shaders
+- **Lucide React** - Ícones (ArrowRight, Menu, X)
+- **Google Fonts** - Geist font
+
+### Painel Admin
 - **Supabase** - Backend e banco de dados
 - **React Hot Toast** - Notificações
+- **GSAP** - Animações (nas páginas antigas)
+- **Three.js** - Esfera 3D (nas páginas antigas)
 
 ## 🎨 Personalização
 
-### Cores
-Edite as variáveis CSS em `src/index.css`:
+### Vídeo de Fundo
+Edite o componente `FoldcraftLanding.tsx`:
 
-```css
-:root {
-  --color-primary: #B8FF00;
-  --color-secondary: #7B2FBE;
-  --color-bg-base: #0A0A0A;
-  /* ... */
-}
+```tsx
+<video
+  autoPlay
+  muted
+  loop
+  playsInline
+  className="absolute inset-0 w-full h-full object-cover"
+  style={{ objectPosition: '70% center' }}
+>
+  <source
+    src="SEU_VIDEO_AQUI.mp4"
+    type="video/mp4"
+  />
+</video>
 ```
 
-### Serviços
-Edite o array `serviceOptions` em `src/components/admin/AppointmentForm.tsx`:
+### Conteúdo do Hero
+No mesmo componente, edite:
 
-```typescript
-const serviceOptions = [
-  { value: 'Corte Masculino', label: 'Corte Masculino — R$ 55' },
-  // Adicione seus serviços aqui
-];
+```tsx
+<p>Brand & Visual Storytelling</p>
+<h1>
+  Shaping visual
+  <br />
+  narratives,
+  <br />
+  one pixel at a time.
+</h1>
+<p>Turning vision into reality...</p>
 ```
+
+### Cores e Estilos
+O design usa Tailwind CSS. Edite diretamente nos componentes:
+- Background: `bg-black`
+- Texto: `text-white`, `text-white/80`, `text-white/60`
+- Botões: `bg-white text-black`
 
 ## 📱 Responsividade
 
-O projeto é 100% responsivo e otimizado para:
-- Mobile (< 768px)
-- Tablet (768px - 1024px)
-- Desktop (> 1024px)
-
-Animações pesadas são automaticamente simplificadas em dispositivos móveis para garantir performance.
+O projeto é 100% responsivo:
+- **Mobile (< 768px)**: Menu hamburger, tipografia ajustada
+- **Tablet (768px - 1024px)**: Layout intermediário
+- **Desktop (> 1024px)**: Navbar completa, tipografia maior
 
 ## 🔒 Segurança
 
@@ -182,4 +216,7 @@ Este projeto é de uso livre para fins educacionais e comerciais.
 
 ## 🤝 Suporte
 
-Para dúvidas ou suporte, consulte a documentação do Supabase em [supabase.com/docs](https://supabase.com/docs).
+Para dúvidas ou suporte, consulte:
+- Documentação do Supabase: [supabase.com/docs](https://supabase.com/docs)
+- Documentação do Tailwind CSS: [tailwindcss.com/docs](https://tailwindcss.com/docs)
+- Documentação do React: [react.dev](https://react.dev)
