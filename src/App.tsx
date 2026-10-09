@@ -10,12 +10,14 @@ import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import Sphere3D from './components/Sphere3D';
+import AdminPanel from './components/admin/AdminPanel';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
   const mainRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -23,6 +25,25 @@ export default function App() {
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  // Check if we're on admin route
+  useEffect(() => {
+    const checkRoute = () => {
+      setIsAdmin(window.location.pathname.includes('/admin') || window.location.hash === '#admin');
+    };
+    checkRoute();
+    window.addEventListener('hashchange', checkRoute);
+    window.addEventListener('popstate', checkRoute);
+    return () => {
+      window.removeEventListener('hashchange', checkRoute);
+      window.removeEventListener('popstate', checkRoute);
+    };
+  }, []);
+
+  // If admin route, show admin panel
+  if (isAdmin) {
+    return <AdminPanel />;
+  }
 
   useEffect(() => {
     if (!mainRef.current) return;
