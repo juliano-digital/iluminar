@@ -53,10 +53,10 @@ export default function FAQ() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                className={`cursor-hover rounded-2xl border transition-all duration-500 ease-[var(--ease-out-expo)] overflow-hidden ${
                   openIndex === index
-                    ? 'border-[var(--color-primary)]/30 bg-[var(--color-bg-elevated)] shadow-[0_0_20px_rgba(184,255,0,0.05)]'
-                    : 'border-[var(--color-border)] bg-[var(--color-bg-surface)] hover:border-[var(--color-border)]/80'
+                    ? 'border-[var(--color-primary)]/30 bg-[var(--color-bg-elevated)] shadow-[0_0_20px_rgba(184,255,0,0.08)]'
+                    : 'border-[var(--color-border)] bg-[var(--color-bg-surface)] hover:border-[var(--color-primary)]/20 hover:shadow-[0_4px_16px_rgba(0,0,0,0.4)]'
                 }`}
               >
                 <button

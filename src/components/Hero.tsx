@@ -97,7 +97,7 @@ export default function Hero() {
         <div className="hero-cta flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 md:mb-16">
           <a
             href="#agendar"
-            className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-primary)] text-[var(--color-bg-base)] font-bold text-base rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(184,255,0,0.4)]"
+            className="cursor-hover group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-primary)] text-[var(--color-bg-base)] font-bold text-base rounded-full transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(184,255,0,0.4)] active:scale-[0.98]"
           >
             Agendar Meu Horário
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1">
@@ -106,7 +106,7 @@ export default function Hero() {
           </a>
           <a
             href="#servicos"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 border border-[var(--color-border)] text-[var(--color-text-primary)] font-medium text-base rounded-full transition-all duration-300 hover:border-[var(--color-primary)]/50 hover:bg-[var(--color-bg-surface)]"
+            className="cursor-hover w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 border border-[var(--color-border)] text-[var(--color-text-primary)] font-medium text-base rounded-full transition-all duration-300 hover:scale-[1.02] hover:border-[var(--color-primary)]/50 hover:bg-[var(--color-bg-surface)] hover:shadow-[0_0_20px_rgba(184,255,0,0.1)] active:scale-[0.98]"
           >
             Ver Serviços
           </a>
