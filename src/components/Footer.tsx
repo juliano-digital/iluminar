@@ -116,6 +116,9 @@ export default function Footer() {
             <a href="#" className="text-xs text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors">
               Termos de Uso
             </a>
+            <a href="#admin" className="text-xs text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors">
+              Admin
+            </a>
           </div>
         </div>
       </div>
